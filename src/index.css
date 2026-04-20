@@ -459,3 +459,173 @@ body {
   50% { opacity: 1; }
   100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
 }
+
+/* --- Ny CSS för Parent Magic (Goblin Tools inspirerat) --- */
+
+.parent-magic-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.magic-tool-card {
+  background: var(--color-glass-white);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: var(--radius-magic);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.magic-tool-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-dust-cyan);
+  font-size: 1.5rem;
+}
+
+.magic-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.magic-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.1rem;
+  transition: border-color 0.3s;
+}
+
+.magic-input:focus {
+  outline: none;
+  border-color: var(--color-dust-cyan);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hammer-btn {
+  background: linear-gradient(45deg, var(--color-dust-cyan), var(--color-ethereal-purple));
+  border: none;
+  color: white;
+  padding: 0 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hammer-btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.hammer-btn:active {
+  transform: scale(0.95);
+}
+
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.breakdown-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.breakdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.breakdown-text {
+  flex: 1;
+}
+
+.breakdown-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.mini-tool-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-dim);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.mini-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-bright);
+}
+
+.formalizer-output {
+  margin-top: 15px;
+  padding: 20px;
+  background: rgba(112, 0, 255, 0.1);
+  border-left: 4px solid var(--color-ethereal-purple);
+  border-radius: 8px;
+  font-style: italic;
+  position: relative;
+}
+
+.formalizer-output::before {
+  content: 'Tolkning:';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: var(--color-nebula-bg);
+  padding: 0 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--color-ethereal-purple);
+  text-transform: uppercase;
+}
+
+.spiciness-slider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.spiciness-slider input {
+  flex: 1;
+  accent-color: var(--color-magic-pink);
+}
+
+.spiciness-label {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  width: 100px;
+}
