@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Shield, Zap, Plus, Trophy, Trash2, CheckCircle, Music, ShoppingBag, Users, Star, Dumbbell, Tent, Ticket, Waves, Hammer, MessageSquare, Wand2, ChevronRight, ListChecks } from 'lucide-react';
+import { Sparkles, Shield, Zap, Trash2, CheckCircle, Music, ShoppingBag, Users, Star, Dumbbell, Tent, Ticket, Waves, Hammer, MessageSquare, Wand2 } from 'lucide-react';
 import { RARITY_COLORS, MAGIC_TO_RARITY } from './constants/rarity';
 
 const HEROES = [
