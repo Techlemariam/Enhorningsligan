@@ -1,18 +1,33 @@
 :root {
-  /* Unicorn Magic Palette */
+  /* Brotherhood Rarity Protocol */
+  --color-rarity-poor: #9ca3af;      /* Gray 400 */
+  --color-rarity-common: #f3f4f6;    /* Gray 100 */
+  --color-rarity-uncommon: #00f2ff;  /* Dust Cyan */
+  --color-rarity-rare: #7000ff;      /* Ethereal Purple */
+  --color-rarity-epic: #ff00de;      /* Magic Pink */
+  --color-rarity-legendary: #ffd700;  /* Glow Gold */
+  --color-rarity-gold: #fbbf24;      /* Amber 400 */
+
+  /* Unicorn Magic Palette (Mapped to Rarity) */
   --color-nebula-bg: #0f051d;
-  --color-magic-pink: #ff00de;
-  --color-ethereal-purple: #7000ff;
-  --color-dust-cyan: #00f2ff;
-  --color-glow-gold: #ffd700;
+  --color-magic-pink: var(--color-rarity-epic);
+  --color-ethereal-purple: var(--color-rarity-rare);
+  --color-dust-cyan: var(--color-rarity-uncommon);
+  --color-glow-gold: var(--color-rarity-legendary);
   --color-glass-white: rgba(255, 255, 255, 0.1);
   --color-text-bright: #ffffff;
   --color-text-dim: #b8b1c5;
 
+  /* RGB Components for transparency */
+  --color-rarity-uncommon-rgb: 0, 242, 255;
+  --color-rarity-rare-rgb: 112, 0, 255;
+  --color-rarity-epic-rgb: 255, 0, 222;
+  --color-rarity-legendary-rgb: 255, 215, 0;
+
   /* Spacing & Borders */
   --radius-magic: 16px;
-  --shadow-glow-pink: 0 0 15px rgba(255, 0, 222, 0.5);
-  --shadow-glow-cyan: 0 0 15px rgba(0, 242, 255, 0.5);
+  --shadow-glow-pink: 0 0 15px rgba(var(--color-rarity-epic-rgb), 0.5);
+  --shadow-glow-cyan: 0 0 15px rgba(var(--color-rarity-uncommon-rgb), 0.5);
   
   /* Fonts */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
@@ -280,7 +295,7 @@ body {
   cursor: pointer;
 }
 
-.btn-icon.trash:hover { color: #ff4d4d; }
+.btn-icon.trash:hover { color: var(--color-rarity-legendary); }
 
 .reward-unlock {
   margin-top: 30px;
@@ -323,7 +338,7 @@ body {
 .hero-avatar {
   width: 40px;
   height: 40px;
-  background: #222;
+  background: var(--sys-color-surface-container-highest, #222);
   border-radius: 50%;
   display: flex;
   align-items: center;

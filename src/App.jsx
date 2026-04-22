@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Shield, Zap, Plus, Trophy, Trash2, CheckCircle, Music, ShoppingBag, Users, Star, Dumbbell, Tent, Ticket, Waves, Hammer, MessageSquare, Wand2, ChevronRight, ListChecks } from 'lucide-react';
+import { RARITY_COLORS, MAGIC_TO_RARITY } from './constants/rarity';
 
 const HEROES = [
   { id: 'eden', name: 'Eden', age: 6, title: 'Master of English & Music', icon: '🎵', color: 'pink' },
@@ -121,7 +122,7 @@ function App() {
       p.style.top = '50vh';
       p.style.setProperty('--tx', (Math.random() - 0.5) * 800 + 'px');
       p.style.setProperty('--ty', (Math.random() - 0.5) * 800 + 'px');
-      p.style.backgroundColor = i % 2 === 0 ? 'var(--color-magic-pink)' : 'var(--color-dust-cyan)';
+      p.style.backgroundColor = i % 2 === 0 ? RARITY_COLORS.EPIC : RARITY_COLORS.UNCOMMON;
       document.body.appendChild(p);
       setTimeout(() => p.remove(), 1500);
     }
@@ -175,7 +176,7 @@ function App() {
                   <div key={quest.id} className="quest-card">
                     <div className="card-header">
                       <span className={`difficulty ${quest.type.toLowerCase()}`}>{quest.type} Magic</span>
-                      <span className="hero-tag" style={{ color: `var(--color-${hero.color === 'pink' ? 'magic-pink' : hero.color === 'cyan' ? 'dust-cyan' : 'glow-gold'})` }}>{hero.name}</span>
+                      <span className="hero-tag" style={{ color: RARITY_COLORS[MAGIC_TO_RARITY[quest.type]] }}>{hero.name}</span>
                     </div>
                     <h3>{quest.icon} {quest.title}</h3>
                     <div className="card-actions">

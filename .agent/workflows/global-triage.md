@@ -1,36 +1,32 @@
-# 🌐 Workflow: Global Brotherhood Triage (10/10)
+﻿# 🌐 Workflow: Global Brotherhood Triage (v1.1.0)
 
-This workflow provides a 10/10 operational overview of the entire Brotherhood ecosystem.
+This workflow provides a high-level operational overview of the Brotherhood ecosystem.
 
 ## 🏁 Purpose
-- **Visibility**: Real-time status of all core projects.
-- **Health**: Monitor build/lint status across the board.
-- **Focus**: Track active domains and sessions.
-- **Control**: Perform global actions like checkpointing.
+- Real-time visibility into branch status, dirty/clean states, and project health.
+- Alignment on active domains and ChatId ownership to prevent conflicts.
 
 ## 🛠️ Execution Steps
 
 1. **Run Global Triage**:
-   ```powershell
+   `powershell
    pwsh c:\Users\alexa\Workspaces\git-status-all.ps1
-   ```
-   *Optional: Use `-Checkpoint` to auto-commit dirty changes with a generic message.*
+   `
 
-2. **Check the Dashboard**:
-   Open and inspect `c:\Users\alexa\Workspaces\BROTHERHOOD.md` for a visual overview.
+2. **Verify Branch Guard**:
+   Before starting work, ensure you are in the correct worktree and have "claimed" the session:
+   `powershell
+   pwsh c:\Users\alexa\Workspaces\verify-branch-guard.ps1 -ExpectedChatId "YOUR_CHAT_ID"
+   `
 
-3. **Identify Hotspots**:
-   - Projects with ❌ health need immediate fix.
-   - Projects with 🚧 DIRTY status need a domain session to continue or close work.
+3. **Update Dashboard**:
+   After a task or domain switch, update your status:
+   `powershell
+   pwsh c:\Users\alexa\Workspaces\update-agent-status.ps1 -Domain "YOUR_DOMAIN" -Health "pass" -ChatId "YOUR_CHAT_ID"
+   `
 
-4. **Context Switch**:
-   1. Navigate to the project folder.
-   2. Run `/domain-session <domain>`.
-   3. Update status using `pwsh c:\Users\alexa\Workspaces\update-agent-status.ps1 -Domain <domain> -Health pass`.
-
-## 📢 Global Dashboard
-The dashboard (`BROTHERHOOD.md`) is the single source of truth for the Brotherhood's current state.
+## 📊 Dashboard Reference
+The dashboard is maintained at: c:\Users\alexa\Workspaces\BROTHERHOOD.md
 
 ---
-*Standardization v1.1.0 (10/10 Upgrade)*
-
+*Brotherhood Operational Maturity - 10/10 Standardization*
