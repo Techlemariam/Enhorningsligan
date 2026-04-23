@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Shield, Zap, Plus, Trophy, Trash2, CheckCircle, Music, ShoppingBag, Users, Star, Dumbbell, Tent, Ticket, Waves, Hammer, MessageSquare, Wand2, ChevronRight, ListChecks } from 'lucide-react';
+import { Sparkles, Shield, Zap, Trash2, CheckCircle, Music, ShoppingBag, Users, Star, Dumbbell, Tent, Ticket, Waves, Hammer, MessageSquare, Wand2 } from 'lucide-react';
 
 const HEROES = [
   { id: 'eden', name: 'Eden', age: 6, title: 'Master of English & Music', icon: '🎵', color: 'pink' },
