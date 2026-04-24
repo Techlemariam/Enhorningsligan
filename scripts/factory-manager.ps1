@@ -53,9 +53,10 @@ function Get-FactoryStatus {
             # Standard Queue: [ ] with priority
             # Taktpinne Queue: [ ] without priority (all planned are queued)
             if ($line -match '^\s*-\s*\[ \]\s*\*\*(.+?)\*\*') {
+                $name = $Matches[1].Trim()
                 # If no priority specified, include it if it's in a project using BACKLOG.md
                 if ($line -match 'priority:\s*(critical|high)' -or $RoadmapFile -eq "BACKLOG.md") {
-                    $queuedItems += $Matches[1].Trim()
+                    $queuedItems += $name
                 }
             }
         }
